@@ -2,6 +2,7 @@ const resetbtn = document.querySelector(".bubbles");
 const container = document.querySelector(".grid-container");
 const pwan1 = document.querySelector(".pawn1foot");
 const pwan2 = document.querySelector(".pawn2foot");
+const nameElem = document.querySelector(".name");
 pwan2.classList.add("remove");
 let turn = true;
 
@@ -122,15 +123,29 @@ resetbtn.addEventListener("click", () => {
   document.querySelectorAll(".boxes").forEach((box) => {
     box.innerHTML = "";
   });
-//   const info = document.querySelector(".info");
-//   info.innerHTML = `<h3>Player</h3>
-//                     <span class="material-symbols-outlined pawn1foot">
-//                         chess_king
-//                     </span>
-//                     <span class="material-symbols-outlined pawn2foot">
-//                         chess_king_2
-//                     </span>
-//                     <h3>'s Turn</h3>`;
+  //   const info = document.querySelector(".info");
+  //   info.innerHTML = `<h3>Player</h3>
+  //                     <span class="material-symbols-outlined pawn1foot">
+  //                         chess_king
+  //                     </span>
+  //                     <span class="material-symbols-outlined pawn2foot">
+  //                         chess_king_2
+  //                     </span>
+  //                     <h3>'s Turn</h3>`;
   pwan2.classList.add("remove");
   pwan1.classList.remove("remove");
 });
+const logout = document.querySelector(".Btn").addEventListener("click", () => {
+  window.location.href = "logout.php";
+});
+
+// if (nameElem) {
+//   nameElem.textContent = `Welcome, ${full_name}`.trim();
+// }
+
+
+if (nameElem) {
+  nameElem.textContent = `Welcome, ${firstName} ${lastName}`.trim();
+  nameElem.style.fontSize = "30px";
+  nameElem.style.color = "green";
+}
